@@ -16,7 +16,7 @@ describe('Bowling Score', () => {
       expect(getBestScoreOfAll(rollsOfGames)).toBe(90);
     })
     it('Should return an error if one of the games does not have 10 frames', () => {
-      expect(() => getBestScoreOfAll(rollsOfGames)).toThrow("Invalid Number of Frames");
+      expect(() => getBestScoreOfAll(rollsOfGamesWithError)).toThrow("Invalid Number of Frames");
     })
   })
 });
