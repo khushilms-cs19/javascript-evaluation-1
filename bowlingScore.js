@@ -1,12 +1,12 @@
-const isTenFrameGame = (rolls) => {
-  // let noOfFrames = 0;
-  // rolls.forEach((roll) => {
-  //   if (roll === 10) {
-  //     noOfFrames += 1;
-  //     return;
-  //   }
-  // });
-};
+// const isTenFrameGame = (rolls) => {
+//   let noOfFrames = 0;
+//   rolls.forEach((roll) => {
+//     if (roll === 10) {
+//       noOfFrames += 1;
+//       return;
+//     }
+//   });
+// };
 
 const getRunningScore = (rolls) => {
   // if (!isTenFrameGame(rolls)) {
@@ -15,7 +15,7 @@ const getRunningScore = (rolls) => {
   const eachFrameScore = Array(10).fill(0);
   let frameCounter = 0;
   let newFrame = true;
-  for (let i = 0; i < rolls.length - 1; i++) {
+  for (let i = 0; i < rolls.length; i++) {
     if (rolls[i] === 10) {
       // finalScore += 10 + rolls[i + 1] + rolls[i + 2];
       eachFrameScore[frameCounter] = 10 + rolls[i + 1] + rolls[i + 2];
@@ -33,10 +33,12 @@ const getRunningScore = (rolls) => {
       frameCounter += 1;
       newFrame = true;
     }
+
+    console.log(eachFrameScore);
   }
   return eachFrameScore.reduce((totalScore, currFrameScore) => totalScore + currFrameScore, 0);
 };
-
+console.log(getRunningScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6]));
 const getBestScoreOfAll = () => {
 
 };

@@ -2,8 +2,11 @@ const { getRunningScore, getBestScoreOfAll } = require("./bowlingScore")
 
 describe('Bowling Score', () => {
   describe('Testing to get the running score.', () => {
-    it('Should return proper score when given correct input.', () => {
+    it('Should return proper score when given correct input test 1.', () => {
       expect(getRunningScore([3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).toBe(90);
+    })
+    it('Should return proper score when given correct input test 2.', () => {
+      expect(getRunningScore(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10)).toBe(30);
     })
     it('Should return an error if the number of frames is not 10', () => {
       expect(getRunningScore([3, 6, 3, 6, 3, 6, 3, 6])).toThrow("Invalid Number of Frames");
