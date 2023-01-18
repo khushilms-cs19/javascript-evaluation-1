@@ -58,18 +58,11 @@ const getRunningScore = (rolls) => {
       newFrame = true;
     }
   }
-
-
-
-
   for (let j = i; j < rolls.length; j++) {
-
     eachFrameScore[frameCounter] += rolls[j];
   }
-
   return eachFrameScore.reduce((totalScore, currFrameScore) => totalScore + currFrameScore, 0);
 };
-
 
 
 const getBestScoreOfAll = (games) => {
