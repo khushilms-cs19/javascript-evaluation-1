@@ -15,7 +15,7 @@ const getRunningScore = (rolls) => {
   const eachFrameScore = Array(10).fill(0);
   let frameCounter = 0;
   let newFrame = true;
-  for (let i = 0; i < rolls.length; i++) {
+  for (let i = 0; i < rolls.length - 3; i++) {
     if (rolls[i] === 10) {
       // finalScore += 10 + rolls[i + 1] + rolls[i + 2];
       eachFrameScore[frameCounter] = 10 + rolls[i + 1] + rolls[i + 2];
@@ -33,8 +33,9 @@ const getRunningScore = (rolls) => {
       frameCounter += 1;
       newFrame = true;
     }
-
-    console.log(eachFrameScore);
+    for (let i = rolls.length - 4; i < rolls.length; i++) {
+      eachFrameScore[frameCounter] = rolls[i];
+    }
   }
   return eachFrameScore.reduce((totalScore, currFrameScore) => totalScore + currFrameScore, 0);
 };
